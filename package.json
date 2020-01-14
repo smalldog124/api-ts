@@ -1,0 +1,36 @@
+{
+  "name": "basis-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "tsc": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smalldog124/api-ts.git"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ]
+  },
+  "author": "smalldoc124",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smalldog124/api-ts/issues"
+  },
+  "homepage": "https://github.com/smalldog124/api-ts#readme",
+  "dependencies": {
+    "ts-jest": "^24.3.0"
+  }
+}
