@@ -78,3 +78,18 @@ uncomment and set path file tsconfig.json
 ```
     npm test
 ```
+
+# Install library APIs web framework 
+```
+$ npm i -s express @types/express
+```
+
+# compile type script to java script
+```
+$ npm run tsc
+```
+
+# listening server
+```
+$ node dist/hello.js
+```
