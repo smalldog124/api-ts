@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "2aa70608-4ce8-4946-8f17-e29982b9051b",
+		"name": "todo list",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "crate todo lis",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4a40679f-aebc-45d4-a12a-605face0b50b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"toppic\":\"กินข้าวกลางวัน\",\n\t\"time_alert\":\"18:30 PM\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/todos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get list todo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f46b8e1f-3129-45f8-9f79-583897158a6f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Todo list dicription is กินข้าวเย็น\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.disc).to.eql(\"กินข้าวเย็น\");",
+							"});",
+							"pm.test(\"Todo list status\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.status).to.eql(\"todo\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/todos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update status",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3a1fdf94-046a-4542-bfa5-7e4906b82138",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"status\":\"done\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/todos/{id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"todos",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get list todo done",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f46b8e1f-3129-45f8-9f79-583897158a6f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Todo list dicription is กินข้าวเย็น\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.disc).to.eql(\"กินข้าวเย็น\");",
+							"});",
+							"pm.test(\"Todo list status\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.status).to.eql(\"done\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/todos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
