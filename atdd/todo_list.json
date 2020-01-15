@@ -65,13 +65,13 @@
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
 							"});",
-							"pm.test(\"Todo list dicription is กินข้าวเย็น\", function () {",
+							"pm.test(\"Todo list dicription is กินข้าวกลางวัน\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.disc).to.eql(\"กินข้าวเย็น\");",
+							"    pm.expect(jsonData[0].toppic).to.eql(\"กินข้าวกลางวัน\");",
 							"});",
 							"pm.test(\"Todo list status\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.status).to.eql(\"todo\");",
+							"    pm.expect(jsonData[0].status).to.eql(\"todo\");",
 							"});"
 						],
 						"type": "text/javascript"
