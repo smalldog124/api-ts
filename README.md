@@ -1,13 +1,10 @@
 # primeFactor-TS
 # โจทย์
 ```
-2 --> [2]
-3 --> [3]
-4 --> [2,2]
-6 --> [2,3]
-9 --> [3,3]
-12 --> [2,2,3]
-15 --> [3,5]
+สร้าง API ของการทำ Todo list
+- ดูว่าวันนี้มี list อะไรบ้าง
+- สร้าง todo list
+- อัพเดท status todo list
 ```
 
 # init project
@@ -73,23 +70,36 @@ uncomment and set path file tsconfig.json
   ....
 ```
 
-# Test
+# Run
 
 ```
-    npm test
+    npm install
+    npm run serve
 ```
 
-# Install library APIs web framework 
+# Dependency
+
+## Install library APIs web framework 
 ```
 $ npm i -s express @types/express
 ```
 
-# compile type script to java script
+## compile type script to java script
 ```
 $ npm run tsc
 ```
 
-# listening server
+## listening server
 ```
 $ node dist/hello.js
+```
+
+## Install library mongo
+```
+$ npm i -s mongoose
+```
+
+## Install library แกะ body จาก request
+```
+$ npm i -s body-parser
 ```
